@@ -1,0 +1,57 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+use Array::RealSpan;
+
+my $point = defined $ARGV[0] ? shift : die "Usage: perl $0 0-4600\n";
+
+my $eon = Array::RealSpan->new;
+$eon->set_range(    0,  545, 'Phanerozoic' );
+$eon->set_range(  545, 2600, 'Proterozoic' );
+$eon->set_range( 2600, 3900, 'Archaean' );
+$eon->set_range( 3900, 4600, 'Hadean' );
+
+my $era = Array::RealSpan->new;
+$era->set_range(   0,    65, 'Cenozoic' );
+$era->set_range(  65,   248, 'Mesozoic' );
+$era->set_range( 248.2, 545, 'Paleozoic' );
+$era->set_range( 545,  4600, 'Precambrian' );
+
+my $period = Array::RealSpan->new;
+$period->set_range(   0,     1.81, 'Quaternary' );
+$period->set_range(   1.81, 23.8,  'Neogene' );
+$period->set_range(  23.8,  65,    'Paleogene' );
+$period->set_range(  65,   142,    'Cretaceous' );
+$period->set_range( 142,   205.7,  'Jurassic' );
+$period->set_range( 205.7, 248.2,  'Triassic' );
+$period->set_range( 248.2, 290,    'Permian' );
+$period->set_range( 290,   354,    'Carboniferous' );
+$period->set_range( 354,   417,    'Devonian' );
+$period->set_range( 417,   443,    'Silurian' );
+$period->set_range( 443,   495,    'Ordovician' );
+$period->set_range( 495,   545,    'Cambrian' );
+
+my $epoch = Array::RealSpan->new;
+$epoch->set_range(  0,     0.01, 'Holocene' );
+$epoch->set_range(  0.01,  1.81, 'Pliestocene' );
+$epoch->set_range(  1.81,  5.32, 'Pliocene' );
+$epoch->set_range(  5.32, 23.8,  'Miocene' );
+$epoch->set_range( 23.8,  33.7,  'Oligocene' );
+$epoch->set_range( 33.7,  55,    'Eocene' );
+$epoch->set_range( 55,    65,    'Paleocene' );
+$epoch->set_range( 286, 323, 'Pennsylvanian' );
+$epoch->set_range( 323, 360, 'Mississippian' );
+
+print 'Eon: ', $eon->lookup($point), "\n"
+    if $eon->lookup($point);
+
+print "\tEra: ", $era->lookup($point), "\n"
+    if $era->lookup($point);
+
+print "\t\tPeriod: ", $period->lookup($point), "\n"
+    if $period->lookup($point);
+
+print "\t\t\tEpoch: ", $epoch->lookup($point), "\n"
+    if $epoch->lookup($point);
+
