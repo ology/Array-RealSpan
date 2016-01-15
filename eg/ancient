@@ -1,4 +1,8 @@
 #!/usr/bin/env perl
+#
+# Millions of years ago taken from
+# http://www.elliny.gr/image/info/geological_timescale.jpg
+#
 use strict;
 use warnings;
 
