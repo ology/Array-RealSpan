@@ -4,7 +4,7 @@ use warnings;
 
 use Array::RealSpan;
 
-my $point = defined $ARGV[0] ? shift : die "Usage: perl $0 0-4600\n";
+my $point = defined $ARGV[0] ? shift : die "Usage: perl $0 0-4599.9~\n";
 
 my $eon = Array::RealSpan->new;
 $eon->set_range(    0,  545, 'Phanerozoic' );
