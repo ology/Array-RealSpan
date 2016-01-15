@@ -17,4 +17,6 @@ ok !$span->lookup(1), 'lookup fail';
 lives_ok { $span->set_range( 1, 5.5, 'B' ) } 'lives through set_range B';
 is $span->lookup(1.5), 'B', 'lookup B';
 
+is_deeply $span->get_range('A'), [0,1], 'get_range A';
+
 done_testing();

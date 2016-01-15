@@ -26,6 +26,7 @@ Array::RealSpan - Map real number ranges to labels or objects
   $epoch->set_range( 33.7,  55,    'Eocene' );
   $epoch->set_range( 55,    65,    'Paleocene' );
   my $name = $epoch->lookup(3.14);
+  my $range = $epoch->get_range('Holocene');
 
 =head1 DESCRIPTION
 
@@ -63,6 +64,26 @@ sub set_range {
         if $end <= $start;
 
     push @{ $self->_ranges }, [ $start, $end, $label ];
+}
+
+=head2 get_range
+
+  $range = $span->get_range($label);
+
+Return the range for the given label.
+
+=cut
+
+sub get_range {
+    my ( $self, $label ) = @_;
+    my $get_range;
+    for my $range ( @{ $self->_ranges } ) {
+        if ( $label eq $range->[2] ) {
+            $get_range = [ $range->[0], $range->[1] ];
+            last;
+        }
+    }
+    return $get_range;
 }
 
 =head2 lookup
