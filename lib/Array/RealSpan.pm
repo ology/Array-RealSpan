@@ -30,7 +30,8 @@ Array::RealSpan - Map real number ranges to labels or objects
 
 =head1 DESCRIPTION
 
-An C<Array::RealSpan> object maps real number ranges to associated labels.
+An C<Array::RealSpan> object maps real number ranges to associated labels or
+objects.
 
 =head1 METHODS
 
@@ -51,7 +52,7 @@ has _ranges => (
 
   $span->set_range( $start, $end, $label );
 
-Add a range, from start to end, for a given label.
+Add a range, from start to end, for a given label or object.
 
 =cut
 
@@ -70,7 +71,7 @@ sub set_range {
 
   $range = $span->get_range($label);
 
-Return the range for the given label.
+Return the range for the given label or object.
 
 =cut
 
@@ -90,7 +91,7 @@ sub get_range {
 
   $label = $span->lookup($number);
 
-Look up the label for the range containing the given number.
+Look up the label (or object) for the range containing the given number.
 
 This compares each range by considering the number less than or equal to the
 start and less than the end.
