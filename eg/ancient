@@ -149,6 +149,6 @@ print "\t\tPeriod: ", $period->lookup($point), "\n"
 print "\t\t\tEpoch: ", $epoch->lookup($point), "\n"
     if $epoch->lookup($point);
 
-print "\t\t\t  Age: ", $age->lookup($point), "\n"
+print "\t\t\tAge: ", $age->lookup($point), "\n"
     if $age->lookup($point);
 
