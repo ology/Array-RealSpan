@@ -137,18 +137,20 @@ $age->set_range( 524,   530,    'Atdabanian' );
 $age->set_range( 530,   534,    'Tommotian' );
 $age->set_range( 534,   545,    'Nemaakitian-Daldynian' );
 
-print 'Eon: ', $eon->lookup($point), "\n"
+print "$point million years ago is the\n";
+
+print $eon->lookup($point), " eon\n"
     if $eon->lookup($point);
 
-print "\tEra: ", $era->lookup($point), "\n"
+print "\t", $era->lookup($point), " era\n"
     if $era->lookup($point);
 
-print "\t\tPeriod: ", $period->lookup($point), "\n"
+print "\t\t", $period->lookup($point), " period\n"
     if $period->lookup($point);
 
-print "\t\t\tEpoch: ", $epoch->lookup($point), "\n"
+print "\t\t\t", $epoch->lookup($point), " epoch\n"
     if $epoch->lookup($point);
 
-print "\t\t\tAge: ", $age->lookup($point), "\n"
+print "\t\t\t\t", $age->lookup($point), " age\n"
     if $age->lookup($point);
 
