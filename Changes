@@ -2,6 +2,7 @@ Revision history for Array-RealSpan:
 
 {{$NEXT}}
     - Enhanced eg/ancient.
+    - Added "object label" tests.
 
 2016-01-16 14:43
     - Minted by Dist::Zilla.
