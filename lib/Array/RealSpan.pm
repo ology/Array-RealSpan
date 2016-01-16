@@ -2,7 +2,7 @@ package Array::RealSpan;
 
 # ABSTRACT: Map real number ranges to labels or objects
 
-our $VERSION = '0.01';
+our $VERSION = '0.0101';
 
 use strict;
 use warnings;
