@@ -1,9 +1,11 @@
 Revision history for Array-RealSpan:
 
 {{$NEXT}}
+
+0.0101 2016-01-16 00:58:50
     - Enhanced eg/ancient.
     - Added "object label" tests.
     - Improved documentation.
 
-2016-01-16 14:43
+0.01 2016-01-15 14:43:00
     - Minted by Dist::Zilla.
