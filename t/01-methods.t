@@ -19,4 +19,11 @@ is $span->lookup(1.5), 'B', 'lookup B';
 
 is_deeply $span->get_range('A'), [0,1], 'get_range A';
 
+my $obj = { foo => 123 };
+
+lives_ok { $span->set_range( 10, 20, $obj ) } 'lives through set_range of object';
+is_deeply $span->lookup(15), $obj, 'lookup object';
+
+is_deeply $span->get_range($obj), [10,20], 'get_range object';
+
 done_testing();
