@@ -17,10 +17,10 @@ $eon->set_range( 2600, 3900, 'Archaean' );
 $eon->set_range( 3900, 4600, 'Hadean' );
 
 my $era = Array::RealSpan->new;
-$era->set_range(   0,    65, 'Cenozoic' );
-$era->set_range(  65,   248, 'Mesozoic' );
-$era->set_range( 248.2, 545, 'Paleozoic' );
-$era->set_range( 545,  4600, 'Precambrian' );
+$era->set_range(   0,    65,   'Cenozoic' );
+$era->set_range(  65,   248.2, 'Mesozoic' );
+$era->set_range( 248.2, 545,   'Paleozoic' );
+$era->set_range( 545,  4600,   'Precambrian' );
 
 my $period = Array::RealSpan->new;
 $period->set_range(   0,     1.81, 'Quaternary' );
