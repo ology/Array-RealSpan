@@ -1,6 +1,8 @@
 Revision history for Array-RealSpan:
 
 {{$NEXT}}
+    - Added the overlap_lookup() method and test coverage.
+    - Added eg/human-history.
 
 0.0101 2016-01-16 00:58:50
     - Enhanced eg/ancient.
