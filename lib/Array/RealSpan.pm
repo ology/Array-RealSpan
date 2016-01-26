@@ -28,6 +28,11 @@ Array::RealSpan - Map real number ranges to labels or objects
   my $name = $epoch->lookup(3.14);
   my $range = $epoch->get_range('Holocene');
 
+  my $lives = Array::RealSpan->new;
+  $lives->set_range( 19401221, 19931204, 'Frank Zappa' );
+  $lives->set_range( 19151212, 19980514, 'Frank Sinatra' );
+  my $names = $lives->overlap_lookup(19500101);
+
 =head1 DESCRIPTION
 
 An C<Array::RealSpan> object maps real number ranges to associated labels or
@@ -105,6 +110,29 @@ sub lookup {
         if ( $number >= $range->[0] && $number < $range->[1] ) {
             $lookup = $range->[2];
             last;
+        }
+    }
+    return $lookup;
+}
+
+=head2 overlap_lookup
+
+  $labels = $span->overlap_lookup($number);
+
+Return the labels (or objects) for the ranges containing the given number, as an
+array reference.
+
+As with C<lookup()>, this method compares each range by considering the number
+less than or equal to the start and less than the end.
+
+=cut
+
+sub overlap_lookup {
+    my ( $self, $number ) = @_;
+    my $lookup = [];
+    for my $range ( @{ $self->_ranges } ) {
+        if ( $number >= $range->[0] && $number < $range->[1] ) {
+            push @$lookup, $range->[2];
         }
     }
     return $lookup;

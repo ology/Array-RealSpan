@@ -26,4 +26,7 @@ is_deeply $span->lookup(15), $obj, 'lookup object';
 
 is_deeply $span->get_range($obj), [10,20], 'get_range object';
 
+lives_ok { $span->set_range( 0.5, 0.7, 'C' ) } 'lives through set_range C';
+is_deeply $span->overlap_lookup(0.6), ['A','C'], 'lookup A,C';
+
 done_testing();
